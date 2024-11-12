@@ -30,7 +30,7 @@ jobs:
     # Hint: Use pip to install packages from requirements.txt
       run: |
         python -m pip install --upgrade pip  
-        pip install -r <FILE NAME>.txt
+        pip install -r requirements.txt
 
   # Test job
   # TODO-STEP 4: Create your "Test" job

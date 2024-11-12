@@ -26,12 +26,22 @@ def add():
 # Optional: Completing the following TODOs is optional for more practice
 
 # TODO: Implement the 'multiplication operation'
-# @app.route('/api/multiply', methods=['POST'])
-# def multiply():
-#     data_request = request.get_json()
-#     # Check if the input is valid
-#     # Perform multiplication
+@app.route('/api/multiply', methods=['POST'])
+def multiply():
+    data_request = request.get_json()
+     # Check if the input is valid
+    if (not data_request or 'number_1' not in data_request or
+            'number_2' not in data_request):
+        return jsonify({'error': 'Invalid input'}), 400
+
+    # Perform multiplication
+    number_1 = float(data_request['number_1'])
+    number_2 = float(data_request['number_2'])
+    
 #     # Return the result
+    result = number_1*number_2
+    return jsonify({'result:':result})
+
 
 # TODO: Implement the 'subtraction operation'
 # @app.route('/api/subtract', methods=['POST'])
